@@ -20,19 +20,19 @@ describe("The Greet Exercise", function(){
     it("Counter should only increment once if username already exists", function(){
         var greetings = GreetFactory();
 
-        greetings.userInput("Luyolo", "isixhosa");
-        greetings.userInput("Luyolo", "english");
-        greetings.userInput("Luyolo", "afrikaans");
+        greetings.setNames("Luyolo", "isixhosa");
+        greetings.setNames("Luyolo", "english");
+        greetings.setNames("Luyolo", "afrikaans");
 
-        assert.equal(greetings.setNames(), 1);
+        assert.equal(1, greetings.getCounter());
     })
     it("Counter should return 3 if 3 different users have been greeted", function(){
         var greetings = GreetFactory();
 
-        greetings.userInput("Luyolo", "isixhosa");
-        greetings.userInput("Athi", "english");
-        greetings.userInput("Luyolo", "afrikaans");
+        greetings.setNames("Luyolo", "isixhosa");
+        greetings.setNames("Athi", "english");
+        greetings.setNames("Luyolo", "afrikaans");
 
-        assert.equal(greetings.getCounter(), 3);
+        assert.equal(2, greetings.getCounter());
     })
 })
